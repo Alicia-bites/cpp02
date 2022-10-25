@@ -12,6 +12,7 @@ Class::Class(std::string s)
 	this->str = s;
 }
 
+//rhs stands for right hand side
 Class	&Class::operator=(const Class &rhs)
 {
 	this->str = rhs.str;

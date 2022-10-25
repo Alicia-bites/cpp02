@@ -1,6 +1,6 @@
 # project settings
-NAME 			:=	HarlFilter
-NAME_AR			:=	HarlFilter.a
+NAME 			:=	Fixed
+NAME_AR			:=	Fixed.a
 C++				:=	c++
 CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98
 CXXFLAGSADD		:=	-g3
@@ -15,7 +15,7 @@ SRCS_PATH		:=	srcs
 RM				:=	rm -rf
 
 SRCS			:=	main.cpp \
-					Harl.cpp \
+					Fixed.cpp \
 
 OBJS			:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS			:=	$(OBJS:.o=.d)

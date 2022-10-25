@@ -3,16 +3,19 @@
 
 #include <iostream>
 
-class Fix
+class Fixed
 {
 	private:
-		int	fixePoint;
-		static const int fracBits;
+		int					binaryPoint_;
+		static const int	fracBits_;
 	public:
-		Fix();
-		Fix(const Fix& f);
-		Fix &operator=(const Fix rhs);
-		~Fix();
-}
+		Fixed();
+		Fixed(const Fixed& f);
+		Fixed &operator=(const Fixed& rhs);
+		~Fixed();
+
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+};
 
 #endif
