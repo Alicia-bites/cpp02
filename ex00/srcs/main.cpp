@@ -9,7 +9,6 @@ int main(void)
 	
 	Fixed c;
 
-	// we want c to have the same binary point as b
 	c = b;
 
 	std::cout << a.getRawBits() << std::endl;

@@ -2,7 +2,7 @@
 
 // default constructor
 Fixed::Fixed()
-: binaryPoint_(0)
+: fixedPoint_(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -15,7 +15,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& ori)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	binaryPoint_ = ori.binaryPoint_;
+	fixedPoint_ = ori.fixedPoint_;
 
 }
 
@@ -34,11 +34,10 @@ Fixed::~Fixed()
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return binaryPoint_;
+	return fixedPoint_;
 }
 
-// define binary point?
 void Fixed::setRawBits(int const raw)
 {
-	binaryPoint_ = raw;
+	fixedPoint_ = raw;
 }

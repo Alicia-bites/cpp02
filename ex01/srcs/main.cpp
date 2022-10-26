@@ -2,19 +2,19 @@
 
 int main(void)
 {
-	Fixed a;
+	// Fixed a;
+	// Fixed b(a);
+	// Fixed c;
+	// c = b;
+	// std::cout << a.getRawBits() << std::endl;
+	// std::cout << b.getRawBits() << std::endl;
+	// std::cout << c.getRawBits() << std::endl;
+	float floatNb = 5.5;
 
-	// b is a copy of a
-	Fixed b(a);
-	
-	Fixed c;
-
-	// we want c to have the same binary point as b
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	Fixed a(5);
+	Fixed b(floatNb);
+	// a.toFloat();
+	a.toInt();
 
 	return 0;
 }

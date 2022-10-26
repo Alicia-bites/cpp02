@@ -6,7 +6,7 @@
 class Fixed
 {
 	private:
-		int					binaryPoint_;
+		int					fixedPoint_;
 		static const int	fracBits_;
 	public:
 		Fixed();
