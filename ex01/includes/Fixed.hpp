@@ -2,14 +2,29 @@
 # define FIXED_HPP
 
 #include <iostream>
-# define ORANGERED1 "\033[38;5;202m"
+#include <cmath>
+
+# define DARKVIOLET1 "\033[38;5;128m"
+# define DARKVIOLET2 "\033[38;5;92m"
+# define DEEPPINK1 "\033[38;5;198m"
+# define DEEPPINK2 "\033[38;5;199m"
+# define DEEPPINK3 "\033[38;5;197m"
+# define DEEPPINK4 "\033[38;5;161m"
+# define DEEPPINK5 "\033[38;5;162m"
+# define DEEPPINK6 "\033[38;5;125m"
+# define DEEPPINK7 "\033[38;5;53m"
+# define DEEPPINK8 "\033[38;5;89m"
+# define DEEPSKYBLUE1 "\033[38;5;39m"
+# define DEEPSKYBLUE2 "\033[38;5;38m"
+# define DEEPSKYBLUE3 "\033[38;5;31m"
+# define DEEPSKYBLUE4 "\033[38;5;32m"
+# define DEEPSKYBLUE5 "\033[38;5;23m"
+# define DEEPSKYBLUE6 "\033[38;5;24m"
+# define DEEPSKYBLUE7 "\033[38;5;25m"
+# define DODGERBLUE1 "\033[38;5;33m"
+# define DODGERBLUE2 "\033[38;5;27m"
+# define DODGERBLUE3 "\033[38;5;26m"
 # define RESET "\033[0m"
-# define STEELBLUE1 "\033[38;5;67m"
-# define ROYALBLUE1 "\033[38;5;63m"
-# define ORANGE1 "\033[38;5;214m"
-# define RED3 "\033[38;5;160m"
-# define RESET "\033[0m"
-# define SLATEBLUE3 "\033[38;5;62m"
 
 class Fixed
 {
@@ -32,5 +47,8 @@ class Fixed
 	float	toFloat( void ) const;
 	int 	toInt( void ) const;
 };
+
+std::ostream &operator<<(std::ostream& o, const Fixed& rhs);
+
 
 #endif

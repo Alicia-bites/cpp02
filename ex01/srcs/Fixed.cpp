@@ -1,10 +1,12 @@
 # include "Fixed.hpp"
 
+// CONSTRUCTIONS -----------------------------------------------------------------------
+
 // default constructor
 Fixed::Fixed()
 : fixedPoint_(0)
 {
-	std::cout << ROYALBLUE1 << "Default constructor called" << RESET << std::endl;
+	std::cout << DARKVIOLET1 << "Default constructor called" << RESET << std::endl;
 }
 
 // constructor
@@ -12,10 +14,8 @@ Fixed::Fixed()
 // corresponding fixed-point value.
 Fixed::Fixed(const int intNb)
 {
-	std::cout << RED3 << "Converting integer " << intNb << " to its fixed-point value." << RESET << std::endl;
+	std::cout << DARKVIOLET2 << "Int constructor called" << RESET << std::endl;
 	fixedPoint_ = intNb << (1 * fracBits_);
-	//intNb_ = intNb * 256;
-	std::cout << fixedPoint_ << std::endl;
 }
 
 // other constructor
@@ -23,17 +23,15 @@ Fixed::Fixed(const int intNb)
 // corresponding fixed-point value.
 Fixed::Fixed(const float floatNb)
 {
-	std::cout << SLATEBLUE3 << "Converting floating point number "
-	<< floatNb << " to its fixed-point value." << RESET << std::endl;
-	fixedPoint_ = floatNb * (1 << fracBits_);
-	std::cout << fixedPoint_ << std::endl;
+	std::cout << DEEPPINK1 << "Float constructor called" << RESET << std::endl;
+	fixedPoint_ = roundf(floatNb * (1 << fracBits_));
 }
 
 // copy constructor
 Fixed::Fixed(const Fixed& ori)
 {
 	std::cout
-		<< ORANGERED1
+		<< DEEPSKYBLUE1
 		<< "Copy constructor called"
 		<< RESET
 		<< std::endl;
@@ -41,21 +39,33 @@ Fixed::Fixed(const Fixed& ori)
 
 }
 
+// If a and b are of type "Fixed", = will give to a the fixed-point value of b. 
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
-	std::cout << ORANGE1 << "Copy assignment operator called" << RESET << std::endl;
+	std::cout << DEEPSKYBLUE3 << "Copy assignment operator called" << RESET << std::endl;
 	setRawBits(rhs.getRawBits());
 	return (*this);
 }
 
+// << will print floating point representation of a if a is of type "Fixed"
+std::ostream &operator<<(std::ostream& o, const Fixed& rhs)
+{
+	o << rhs.toFloat();
+	return (o);
+}
+
 // destructor
 Fixed::~Fixed()
-{}
+{
+	std::cout << DEEPPINK8 << "Destructor called" << RESET << std::endl;
+}
 
+
+
+// FUNCTIONS ------------------------------------------------------------------------------
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << STEELBLUE1 << "getRawBits member function called" << RESET << std::endl;
 	return fixedPoint_;
 }
 
@@ -66,18 +76,14 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-	std::cout << ORANGE1 << "Converting fixed-point number " << fixedPoint_ << " to float." << RESET << std::endl;
 	float floatNb;
-	floatNb = fixedPoint_ >> fracBits_;
-	std::cout << floatNb << std::endl;
+	floatNb = (float)fixedPoint_ / (1 << 8);
 	return floatNb;
 }
 
 int	Fixed::toInt() const
 {
-	std::cout << STEELBLUE1 << "Converting fixed-point number " << fixedPoint_ << " to int." << RESET << std::endl;
 	int intNb;
 	intNb = fixedPoint_ >> fracBits_;
-	std::cout << intNb << std::endl;
 	return intNb;
 }
