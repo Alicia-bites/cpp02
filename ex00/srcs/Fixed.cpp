@@ -7,10 +7,6 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-// constructor
-// Fix::Fix()
-// {}
-
 // copy constructor
 Fixed::Fixed(const Fixed& ori)
 {
@@ -19,6 +15,7 @@ Fixed::Fixed(const Fixed& ori)
 
 }
 
+// If a and b are of type "Fixed", = will give to a the fixed-point value of b. 
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -30,13 +27,14 @@ Fixed &Fixed::operator=(const Fixed& rhs)
 Fixed::~Fixed()
 {}
 
-
+// get object's fixed-point value
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return fixedPoint_;
 }
 
+// set object's fixed-point value
 void Fixed::setRawBits(int const raw)
 {
 	fixedPoint_ = raw;
