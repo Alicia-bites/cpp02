@@ -57,25 +57,20 @@ int main(void)
 
 	Fixed l(4);
 	std::cout << "Let's post-increment b" << std::endl;
-	std::cout << l << "++" << " = " << ++l << std::endl;
+	std::cout << l << "++" << " = " << l++ << std::endl;
 	std::cout << std::endl;
 
 	Fixed m(2.678f);
 	std::cout << "Let's pre-decrement a" << std::endl;
-	std::cout << "++"<< m << " = " << ++a << std::endl;
+	std::cout << "--"<< m << " = " << --m << std::endl;
 	std::cout << std::endl;
 
 	Fixed n(4);
 	std::cout << "Let's post-decrement b" << std::endl;
-	std::cout << n << "++" << " = " << ++a << std::endl;
+	std::cout << n << "--" << " = " << n-- << std::endl;
 	std::cout << std::endl;
 
 //	-----------------------------------------------------------------------------------------------
-	
-
-
-	Fixed res = a + b;
-	std::cout << "res = " << res << std::endl;
 
 	return 0;
 }
