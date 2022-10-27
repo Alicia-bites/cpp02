@@ -6,7 +6,7 @@
 Fixed::Fixed()
 : fixedPoint_(0)
 {
-	std::cout << DARKVIOLET1 << "Default constructor called" << RESET << std::endl;
+	// std::cout << DARKVIOLET1 << "Default constructor called" << RESET << std::endl;
 }
 
 // constructor
@@ -14,7 +14,7 @@ Fixed::Fixed()
 // corresponding fixed-point value.
 Fixed::Fixed(const int intNb)
 {
-	std::cout << DARKVIOLET2 << "Int constructor called" << RESET << std::endl;
+	// std::cout << DARKVIOLET2 << "Int constructor called" << RESET << std::endl;
 	fixedPoint_ = intNb << fracBits_;
 }
 
@@ -23,18 +23,18 @@ Fixed::Fixed(const int intNb)
 // corresponding fixed-point value.
 Fixed::Fixed(const float floatNb)
 {
-	std::cout << DEEPPINK1 << "Float constructor called" << RESET << std::endl;
+	// std::cout << DEEPPINK1 << "Float constructor called" << RESET << std::endl;
 	fixedPoint_ = (int)roundf(floatNb * (1 << fracBits_));
 }
 
 // copy constructor
 Fixed::Fixed(const Fixed& ori)
 {
-	std::cout
-		<< DEEPSKYBLUE1
-		<< "Copy constructor called"
-		<< RESET
-		<< std::endl;
+	// std::cout
+		// << DEEPSKYBLUE1
+		// << "Copy constructor called"
+		// << RESET
+		// << std::endl;
 	fixedPoint_ = ori.fixedPoint_;
 
 }
@@ -44,7 +44,7 @@ Fixed::Fixed(const Fixed& ori)
 // If a and b are of type "Fixed", = will give to lhs the fixed-point value of rhs. 
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
-	std::cout << DEEPSKYBLUE3 << "Copy assignment operator called" << RESET << std::endl;
+	// std::cout << DEEPSKYBLUE3 << "Copy assignment operator called" << RESET << std::endl;
 	this->fixedPoint_ = rhs.fixedPoint_;
 	return *this;
 }
@@ -189,7 +189,7 @@ Fixed	const &Fixed::max(Fixed const &bacon, Fixed const &omelet)
 // destructor
 Fixed::~Fixed()
 {
-	std::cout << DEEPPINK8 << "Destructor called" << RESET << std::endl;
+	// std::cout << DEEPPINK8 << "Destructor called" << RESET << std::endl;
 }
 
 // FUNCTIONS ------------------------------------------------------------------------------
