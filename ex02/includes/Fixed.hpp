@@ -41,12 +41,35 @@ class Fixed
 		Fixed(const Fixed& f);
 		~Fixed();
 
-		Fixed &operator=(const Fixed& rhs);
+		Fixed 	&operator=(const Fixed& rhs);
+
+		int		operator<(const Fixed& rhs) const;
+		int		operator<=(const Fixed& rhs) const;
+		int		operator>(const Fixed& rhs) const;
+		int		operator>=(const Fixed& rhs) const;
+		int		operator==(const Fixed& rhs) const;
+		int		operator!=(const Fixed& rhs) const;
+
+		Fixed	operator+(const Fixed& rhs) const;
+		Fixed	operator-(const Fixed& rhs) const;
+		Fixed	operator*(const Fixed& rhs) const;
+		Fixed	operator/(const Fixed& rhs) const;
+
+		Fixed	&operator++(void);
+		Fixed	operator++(int);
+		Fixed 	&operator--(void);
+		Fixed 	operator--(int);
+
+		static	Fixed	&min(Fixed &bacon, Fixed &omelet);
+		static	Fixed	&max(Fixed &bacon, Fixed &omelet);
+		static	const Fixed	&min(Fixed const &bacon, Fixed const &omelet);
+		static	const Fixed	&max(Fixed const &bacon, Fixed const &omelet);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat( void ) const;
 		int 	toInt( void ) const;
+
 };
 
 std::ostream &operator<<(std::ostream& o, const Fixed& rhs);
