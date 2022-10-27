@@ -43,7 +43,7 @@ Fixed::Fixed(const Fixed& ori)
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
 	std::cout << DEEPSKYBLUE3 << "Copy assignment operator called" << RESET << std::endl;
-	setRawBits(rhs.getRawBits());
+	this->fixedPoint_ = rhs.fixedPoint_;
 	return (*this);
 }
 
