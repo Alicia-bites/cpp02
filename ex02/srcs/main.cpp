@@ -70,6 +70,18 @@ int main(void)
 	std::cout << n << "--" << " = " << n-- << std::endl;
 	std::cout << std::endl;
 
+	Fixed o(2.278f);
+	Fixed p(4);
+	std::cout << "max between " << o << " and " << p << " is " << Fixed::max(o, p) << std::endl;
+	std::cout << "min between " << o << " and " << p << " is " << Fixed::min(o, p) << std::endl;
+	std::cout << std::endl;
+
+	Fixed const q(2.278f);
+	Fixed const r(4);
+	std::cout << "(const) max between " << q << " and " << r << " is " << Fixed::max(o, p) << std::endl;
+	std::cout << "(const) min between " << q << " and " << r << " is " << Fixed::min(o, p) << std::endl;
+
+
 //	-----------------------------------------------------------------------------------------------
 
 	return 0;
