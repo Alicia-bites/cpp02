@@ -25,7 +25,9 @@ Fixed &Fixed::operator=(const Fixed& rhs)
 
 // destructor
 Fixed::~Fixed()
-{}
+{
+	std::cout << "Destructor called" << std::endl;
+}
 
 // get object's fixed-point value
 int Fixed::getRawBits(void) const
