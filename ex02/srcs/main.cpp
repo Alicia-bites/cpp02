@@ -47,6 +47,12 @@ int main(void)
 	std::cout << i << " / " << j << " = " << a / b << std::endl;
 	std::cout << std::endl;
 
+	Fixed s(2.5f);
+	Fixed t(0);
+	std::cout << i << " / " << j << " = " << a / b << std::endl;
+	std::cout << std::endl;
+
+
 
 //	-----------------------------------------------------------------------------------------------
 
