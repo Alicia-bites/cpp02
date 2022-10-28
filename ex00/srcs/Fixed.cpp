@@ -37,5 +37,6 @@ int Fixed::getRawBits(void) const
 // set object's fixed-point value
 void Fixed::setRawBits(int const raw)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	fixedPoint_ = raw;
 }
