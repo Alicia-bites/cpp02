@@ -14,13 +14,13 @@
 int main()
 {
 	Fixed a;
-	Fixed const b(10);
-	Fixed const c(42.42f);
-	Fixed const d(b);
+	Fixed const b(10); // constructing instance from integer
+	Fixed const c(42.42f); // constructing instance from floating-point
+	Fixed const d(b); // constructing instance from integer
 
 	a = Fixed(1234.4321f);
 
-	std::cout << "a is " << a << std::endl;
+	std::cout << "a is " << a << std::endl; //using << operator overload to print variable of type "Fixed"
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
@@ -29,6 +29,15 @@ int main()
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "Additionnal tests :" << std::endl;
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
 
 	return 0;
 }
