@@ -7,6 +7,12 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
+// destructor
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
 // copy constructor
 Fixed::Fixed(const Fixed& ori)
 {
@@ -15,6 +21,7 @@ Fixed::Fixed(const Fixed& ori)
 
 }
 
+//copy assignement operator
 // If a and b are of type "Fixed", = will give to a the fixed-point value of b. 
 Fixed &Fixed::operator=(const Fixed& rhs)
 {
@@ -23,11 +30,7 @@ Fixed &Fixed::operator=(const Fixed& rhs)
 	return (*this);
 }
 
-// destructor
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+// FUNCTIONS --------------------------------------------------------------------------------------
 
 // get object's fixed-point value
 int Fixed::getRawBits(void) const
