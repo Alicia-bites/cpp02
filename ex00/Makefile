@@ -49,7 +49,7 @@ re:
 			make fclean
 			make all
 
-comp:
+valgrind:
 			make
 			$(VALGRIND) ./$(NAME)
 
